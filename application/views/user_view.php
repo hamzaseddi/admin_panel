@@ -10,11 +10,14 @@
             <input type="password" name="password" />
         </form>
         <?php
-            echo $data -> userid;
+            echo $data['last'] -> userid;
             echo '<br>';
-            echo $data -> login;
+            echo $data['last'] -> login;
             echo '<br>';
-            echo $data -> password;
+            echo $data['last'] -> password;
+
+            echo $data['id'] -> userid;
+
         ?>
     </body>
 </html>

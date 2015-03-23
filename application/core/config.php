@@ -6,6 +6,7 @@
     /*
      * Инициализируем php-activerecord для более удобной работы с базой данных
      */
+
     ActiveRecord\Config::initialize(function ($cfg) {
         $path = 'application/models';  //директория с моделями
         $cfg->set_model_directory($path);

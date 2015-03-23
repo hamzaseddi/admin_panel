@@ -2,7 +2,7 @@
 
     /*
     Класс-маршрутизатор для определения запрашиваемой страницы.
-    > цепляет классы контроллеров и моделей;
+    > цепляет классы контроллеров;
     > создает экземпляры контролеров страниц и вызывает действия этих контроллеров.
     */
     class Route {
@@ -26,15 +26,6 @@
 
             $controller_name = 'Controller_'.$controller_name;
             $action_name = 'action_'.$action_name;
-//            $model_name = 'Model_'.$controller_name;
-
-//            подцепляем файл с классом модели (файла модели может и не быть)
-//
-//            $model_file = strtolower($model_name).'.php';
-//            $model_path = "application/models/".$model_file;
-//            if(file_exists($model_path)) {
-//                include "application/models/".$model_file;
-//            }
 
             // подцепляем файл с классом контроллера
             $controller_file = strtolower($controller_name).'.php';
@@ -51,7 +42,7 @@
 
             // создаем контроллер
             $controller = new $controller_name;
-            $action = $action_name;
+            $action = $asction_name;
 
             if(method_exists($controller, $action)) {
                 // вызываем действие контроллера
