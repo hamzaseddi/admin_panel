@@ -1,9 +1,9 @@
 <?php
-session_start();
-if ( $_SESSION['login'] != "true" ){
-    session_destroy();
-    header("Location: http://localhost/login");
-}
+    session_start();
+    if ( $_SESSION['login'] != "true" ){
+        session_destroy();
+        header("Location: http://localhost/login");
+    }
     class Controller_Index extends Controller{
         function action_index() {
             $this->view->load('common/header_view.php');

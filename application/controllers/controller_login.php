@@ -5,6 +5,7 @@ session_start();
             if($_SESSION['login'] == 'true') {
                 header("Location: http://localhost/index");
             }else{
+                $this->view->load('common/header_view.php');
                 $this->view->load('login_view.php');
             }
         }

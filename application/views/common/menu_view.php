@@ -73,7 +73,7 @@
 <div class="navbar" role="navigation">
     <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.html#"><i class="fa fa-power-off"></i></a></li>
+            <li><a href="/login/logout"><i class="fa fa-power-off"></i></a></li>
         </ul>
     </div>
 </div>
@@ -209,7 +209,7 @@
 
         <ul class="sidebar-footer-menu">
             <li><a href="index.html#"><i class="fa fa-cog"></i> Settings</a></li>
-            <li><a href="http://localhost/login/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+            <li><a href="/login/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
         </ul>
 
         <div class="sidebar-brand">
