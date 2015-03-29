@@ -26,11 +26,10 @@
 
         <!-- page css files -->
         <link href="assets/css/climacons-font.css" rel="stylesheet">
-
         <link href="assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
-        <link href="assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet">
         <link href="assets/plugins/morris/css/morris.css" rel="stylesheet">
         <link href="assets/plugins/jvectormap/css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+        <link href="assets/plugins/fullcalendar/css/fullcalendar.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="assets/css/style.min.css" rel="stylesheet" id="main-style">
