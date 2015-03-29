@@ -42,7 +42,7 @@
 
             // создаем контроллер
             $controller = new $controller_name;
-            $action = $asction_name;
+            $action = $action_name;
 
             if(method_exists($controller, $action)) {
                 // вызываем действие контроллера
