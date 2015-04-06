@@ -14,7 +14,7 @@
             $routes = explode('/', $_SERVER['REQUEST_URI']);
 
             // получаем имя контроллера
-            if ( isset($routes[1]) ) {
+            if ( isset($routes[1]) && !empty($routes[1])) {
                 $controller_name = $routes[1];
             }
 

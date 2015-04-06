@@ -1,21 +1,14 @@
 <?php
     class User extends ActiveRecord\Model {
-        public static $table_name = 'user';
-
-        public function find_user($id) {
-           return $data = User::find($id);
-        }
-
-        public function create_user($login,$pass) {
+        public static $table_name = 'users';
+        public function create_user($first_name, $last_name, $birthday, $phone, $email, $password) {
             User::create(array(
-                'login'     => $login,
-                'password'  => md5($pass)
+                'first_name' => $first_name,
+                'last_name'  => $last_name,
+                'birthday'   => $birthday,
+                'phone'      => $phone,
+                'email'      => $email,
+                'password'   => md5($password) 
             ));
-            return User::insert_id();
         }
-
-        public function last_user() {
-            return User::last();
-        }
-
     }
