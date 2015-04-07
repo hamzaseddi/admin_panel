@@ -8,6 +8,14 @@
 		return 'http://localhost/'.$path;
 	}
 
+	function session_cheker(){
+		session_start();
+		if ( $_SESSION['login'] != "true" ) {
+			session_destroy();
+			redirect('login');
+		}
+	}
+
 	/*
 	* Global function
 	* redirect

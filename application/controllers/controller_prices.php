@@ -1,9 +1,5 @@
 <?php
-    session_start();
-    if ( $_SESSION['login'] != "true" ){
-        session_destroy();
-        redirect('login');
-    }
+    session_cheker();
     class Controller_Prices extends Controller{
         function action_index() {
             $this->view->load('common/header_view');

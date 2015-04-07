@@ -30,22 +30,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Vishnu Serghei</td>
-                                <td>2012/01/01</td>
-                                <td>Member</td>
-                                <td>Member</td>
-                                <td>Member</td>
-                                <td>Удалить/Изменить</td>
-                            </tr>
-                            <tr>
-                                <td>Vishnu Serghei</td>
-                                <td>2012/01/01</td>
-                                <td>Member</td>
-                                <td>Member</td>
-                                <td>Member</td>
-                                <td>Удалить/Изменитьы</td>
-                            </tr>
+                            <?php
+						    	foreach ($data['workers'] as $worker) {
+						    		echo '<tr><td>'.$worker -> first_name.'</td>';
+						    		echo '<td>'.$worker -> last_name.'</td>';
+						    		echo '<td>'.$worker -> birthday.'</td>';
+						    		echo '<td>'.$worker -> phone.'</td>';
+						    		echo '<td>'.$worker -> email.'</td>';
+						    		echo '<td><a href="'.base_url('workers/delete_user/').$worker -> id.'">Удалить</a>/Изменитьы</td></tr>';
+								}
+							?>
                         </tbody>
                     </table>
                 </div>
@@ -53,5 +47,6 @@
         </div>
     </div>
 </div>
+
 
 

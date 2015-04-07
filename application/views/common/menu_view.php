@@ -73,7 +73,7 @@
 <div class="navbar" role="navigation">
     <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?php echo base_url('/login/logout');?>"><i class="fa fa-power-off"></i></a></li>
+            <li><a href="<?php echo base_url('login/logout');?>"><i class="fa fa-power-off"></i></a></li>
         </ul>
     </div>
 </div>
