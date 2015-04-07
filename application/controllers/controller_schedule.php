@@ -2,7 +2,7 @@
     session_start();
     if ( $_SESSION['login'] != "true" ){
         session_destroy();
-        header("Location: http://localhost/login");
+        redirect('login');
     }
     class Controller_Schedule extends Controller{
         function action_index() {

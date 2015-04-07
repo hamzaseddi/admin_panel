@@ -3,7 +3,7 @@ session_start();
     class Controller_Login extends Controller{
         function action_index(){
             if($_SESSION['login'] == 'true') {
-                header("Location: http://localhost/index");
+                redirect('login');
             }else{
                 $this->view->load('common/header_view.php');
                 $this->view->load('login_view.php');
