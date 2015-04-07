@@ -22,8 +22,9 @@
 
         function action_new_user() {
             if(isset($_POST) ) {
-                User::create_user($_POST['first_name'], $_POST['last_name'], $_POST['birthday'], $_POST['phone'], $_POST['email'], $_POST['password']);
+                User::create_user($_POST['first_name'], $_POST['last_name'], $_POST['birthday'], $_POST['phone'], $_POST['email'], $_POST['password']); 
                 header("Location: ".base_url('workers'));
+                exit;
             }
             
         }
