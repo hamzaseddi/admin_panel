@@ -1,10 +1,10 @@
         <footer>
             <div class="row">
                 <div class="col-sm-5">
-                    &copy; 2014 creativeLabs. <a href="http://bootstrapmaster.com">Admin Templates</a> by BootstrapMaster
+                    &copy; 2015 CodeDeer. <a href="http://codedeer.net/" alt="CodeDeer">CodeDeer.net</a>
                 </div>
                 <div class="col-sm-7 text-right">
-                    Powered by: <a href="http://bootstrapmaster.com/demo/origin/" alt="Bootstrap Admin Templates">Origin Admin</a> | Based on Bootstrap 3.2.0 | Built with brix.io <a href="http://brix.io" alt="Brix.io - Bootstrap Builder">Bootstrap Builder</a>
+                    Powered by: <a href="http://codedeer.net/" alt="CodeDeer">CodeDeer.net</a> | Based on Bootstrap 3.2.0 | Built with brix.io <a href="http://brix.io" alt="Brix.io - Bootstrap Builder">Bootstrap Builder</a>
                 </div>
             </div>
         </footer>

@@ -5,7 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Origin Admin - Bootstrap Admin Template">
-        <meta name="author" content="Łukasz Holeczek">
         <meta name="keyword" content="Origin, Admin, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url('assets/ico/apple-touch-icon-144-precomposed.png');?>">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url('assets/ico/apple-touch-icon-114-precomposed.png');?>">

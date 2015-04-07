@@ -7,11 +7,10 @@
             <div class="input-prepend input-group">
                 <span class="input-group-addon clear"><i class="fa fa-search"></i></span>
                 <input id="prependedInput" class="form-control" size="16" type="text" placeholder="What are you looking for?">
-					<span class="input-group-btn">
-						<button class="btn btn-info" type="button">Search</button>
-					</span>
             </div>
-        </div><!--/col-->
-    </div><!--/row-->
-    <br/><br/><br/>
-</div><!--/content-->
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+</div>
