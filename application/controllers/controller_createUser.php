@@ -8,6 +8,6 @@
             $pass = 'test';
             //User::create_user($login,$pass);
 
-            $this->view->load('user_view.php',$data);
+            $this->view->load('user_view',$data);
         }
     }

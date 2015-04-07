@@ -1,12 +1,12 @@
 <?php
 session_start();
-    class Controller_Login extends Controller{
-        function action_index(){
+    class Controller_Login extends Controller {
+        function action_index() {
             if($_SESSION['login'] == 'true') {
                 redirect('login');
             }else{
-                $this->view->load('common/header_view.php');
-                $this->view->load('login_view.php');
+                $this->view->load('common/header_view');
+                $this->view->load('login_view');
             }
         }
         function action_sing_up() {
@@ -15,18 +15,17 @@ session_start();
                 $password = $_POST['password'];
                 if($login == "admin" && $password == "admin") {
                     $_SESSION['login'] = "true";
-                    header("Location: http://localhost/index");
+                     redirect('index');
                 } else {
-                    header("Location: http://localhost/login");
+                     redirect('login');
                 }
             } else {
-                $this->view->load('login_view.php');
+                $this->view->load('login_view');
             }
         }
 
         function action_logout() {
             session_destroy();
-            header("Location: http://localhost/login");
+            redirect('login');
         }
-
     }
