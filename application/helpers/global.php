@@ -8,6 +8,12 @@
 		return 'http://localhost/'.$path;
 	}
 
+	/*
+	* Global function 
+	* Checking session status 
+	* if session ok show content
+	* else redirect to login page
+	*/
 	function session_cheker(){
 		session_start();
 		if ( $_SESSION['login'] != "true" ) {

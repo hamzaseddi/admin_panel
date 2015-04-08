@@ -39,7 +39,7 @@
 									echo '<td>'.$worker -> email.'</td>';
 									echo '<td>
 											<a href="'.base_url('workers/delete_user/?id=').$worker -> id.'">Удалить</a> / 
-											<a href="'.base_url('workers/delete_user/?id=').$worker -> id.'">Изменить</a>
+											<a href="'.base_url('workers/edit/?id=').$worker -> id.'">Изменить</a>
 											</td>
 										</tr>';
 								}
@@ -51,6 +51,3 @@
 		</div>
 	</div>
 </div>
-
-
-
