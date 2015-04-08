@@ -22,10 +22,10 @@
                         <thead>
                             <tr>
                                 <th>Имя</th>
-                                <th>Пол</th>
-                                <th>Возраст</th>
-                                <th>Зарплата</th>
-                                <th>lorem</th>
+                                <th>Фамилия</th>
+                                <th>День рождения</th>
+                                <th>Телефон</th>
+                                <th>Email</th>
                                 <th>Действие</th>
                             </tr>
                         </thead>
@@ -37,7 +37,7 @@
 						    		echo '<td>'.$worker -> birthday.'</td>';
 						    		echo '<td>'.$worker -> phone.'</td>';
 						    		echo '<td>'.$worker -> email.'</td>';
-						    		echo '<td><a href="'.base_url('workers/delete_user/').$worker -> id.'">Удалить</a>/Изменитьы</td></tr>';
+						    		echo '<td><a href="'.base_url('workers/delete_user/?id=').$worker -> id.'">Удалить</a>/Изменитьы</td></tr>';
 								}
 							?>
                         </tbody>

@@ -33,8 +33,11 @@
 			$this->view->load('common/footer_view');
 		}
 
-		function action_delete_user($user_id) {
-			User::delete_user($user_id);
+		function action_delete_user() {
+			if(is_numeric($_GET['id'])) {
+				$user_id = $_GET['id'];
+				User::delete_user($user_id);
+			}
 			redirect('workers');
 		}
 	}
