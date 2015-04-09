@@ -13,6 +13,32 @@
 			));
 		}
 
+		/*
+		* generate randoom pass for user and send it to email 
+		*	user need to know his email
+		*	he will get password to it
+		*	DOTO: need to create email sendr.
+		*/
+		public function restore_user_pass($login) {
+			$user = User::find_by_email($login);
+		}
+
+		/*
+		* Function for generation random password 
+		* for sending it to user or somethig else/
+		* return string
+		*/
+		public function randomPassword() {
+		    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789"; //string for generating pass
+		    $pass = array();  // array for our future password 
+		    $alphaLength = strlen($alphabet) - 1;  
+		    for ($i = 0; $i < 8; $i++) { 
+		        $n = rand(0, $alphaLength);
+		        $pass[] = $alphabet[$n];  //getting password  together from randrom pices
+		    }
+		    return implode($pass);  // attay to string  and return  it 
+		}
+
 		public function find_user_by_id($id) {
 			return User::find($id);
 		}
@@ -33,5 +59,14 @@
 	    	$user -> phone 		= $phone;
 	    	$user -> email 		= $email;
 	    	$user -> save();
+	    }
+
+	    public function check_auth_data($login, $password) {
+	    	$user = User::find_by_email($login);
+	    	if($user -> password == md5($password)) {
+	    		return true;	
+	    	}else{
+	    		return false;
+	    	}
 	    }
 	}

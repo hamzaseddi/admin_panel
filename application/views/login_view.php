@@ -5,7 +5,7 @@
                     <div class="header">
                         Admin panel
                     </div>
-                    <form action="http://localhost/login/sing_up/" method="post">
+                    <form action="http://localhost/login/sing_in/" method="post">
                         <fieldset>
                             <div class="form-group first">
                                 <div class="input-group col-sm-12">

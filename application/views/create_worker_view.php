@@ -33,7 +33,7 @@
 						    <label for="city">Пароль</label>
 						    <input type="password" class="form-control" name="password" placeholder="пароль сотрудника">
 						    <br>
-						    <button type="submit" class="btn btn-default pull-right">Доавить</button>
+						    <button type="submit" class="btn btn-sm btn-success pull-right"><i class="fa fa-dot-circle-o"></i> Доавить</button>
 						</div>
 					</form>	
 				</div>

@@ -28,7 +28,7 @@
 								?>
 							</select>
 							<br>
-						    <button type="submit" class="btn btn-default pull-right">Изменить</button>
+							<button type="submit" class="btn btn-sm btn-success pull-right"><i class="fa fa-dot-circle-o"></i> Изменить</button>
 						</div>
 					</form>	
 				</div>
