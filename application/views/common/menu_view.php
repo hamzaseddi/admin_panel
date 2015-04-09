@@ -130,7 +130,7 @@
                     <a href="#"><i class="fa fa-edit"></i><span class="text">Цены</span> <span class="indicator"></span></a>
                     <ul>
                         <li><a href="<?php echo base_url('prices');?>"><i class="fa fa-edit"></i><span class="text">Таблица цен</span></a></li>
-                        <li><a href="<?php echo base_url('edit_price');?>"><i class="fa fa-edit"></i><span class="text">Изменение цен</span></a></li>
+                        <li><a href="<?php echo base_url('prices/new_price');?>"><i class="fa fa-edit"></i><span class="text">Добавление цены</span></a></li>
                     </ul>
                 </li>
                 <li>

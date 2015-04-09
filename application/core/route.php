@@ -8,7 +8,7 @@
 	class Route {
 		static function start() {
 			// контроллер и действие по умолчанию
-			$controller_name = 'Login';
+			$controller_name = 'Index';
 			$action_name = 'index';
 
 			$routes = explode('/', $_SERVER['REQUEST_URI']);
