@@ -7,21 +7,8 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-3 hidden-phone hidden-tablet">
-                                <div id="external-events">
-                                    <h4>Draggable Events</h4>
-                                    <div class="external-event badge">Default</div>
-                                    <div class="external-event badge badge-success">Completed</div>
-                                    <div class="external-event badge badge-warning">Warning</div>
-                                    <div class="external-event badge badge-important">Important</div>
-                                    <div class="external-event badge badge-info">Info</div>
-                                    <div class="external-event badge badge-inverse">Other</div>
-                                    <p>
-                                        <label for="drop-remove"><input type="checkbox" id="drop-remove" /> remove after drop</label>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-9">
+
+                            <div class="col-lg-12">
                                 <div id="calendar" class="col-lg-12"></div>
                             </div>
                         </div>
