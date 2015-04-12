@@ -62,6 +62,7 @@
         <script src="<?php echo base_url('assets/js/pages/index.js');?>"></script>
         <script src="<?php echo base_url('assets/plugins/jquery-cookie/jquery.cookie.min.js');?>"></script>
         <script src="<?php echo base_url('assets/js/demo.min.js');?>"></script>
+        <script src="<?php echo base_url('assets/js/pages/form-elements.js');?>"></script>
         <!-- end: JavaScript-->
     </body>
 </html>

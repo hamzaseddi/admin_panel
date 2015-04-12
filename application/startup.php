@@ -1,10 +1,11 @@
 <?php
     // подключаем файлы ядра
-	require_once 'helpers/global.php';// глобальные функции переменнве
+	require_once 'helpers/upload.php'; // uploading file helper
+	require_once 'helpers/global.php';// all global staff
     require_once 'library/php-activerecord/ActiveRecord.php'; //active records php  работа с базой данных
-    require_once 'core/view.php';  // представление
-    require_once 'core/controller.php'; // котроллеры
-    require_once 'core/route.php';  //роуты
-    require_once 'core/config.php'; //фаил конфигураций
+    require_once 'core/view.php';  // core view
+    require_once 'core/controller.php'; // core controller
+    require_once 'core/route.php';  //router 
+    require_once 'core/config.php'; //config file 
 
-    Route::start(); // запускаем маршрутизатор
+    Route::start(); // run router

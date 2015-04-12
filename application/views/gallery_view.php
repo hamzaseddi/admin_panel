@@ -14,7 +14,6 @@
                     </div>
                 </div>
                 <div class="panel-body">
-
                     <div class="row">
                         <div style="margin-bottom:30px" class="col-sm-2 col-xs-6">
                             <img class="img-thumbnail" src="assets/img/gallery/photo1.jpg" alt="Sample Image">
@@ -58,11 +57,16 @@
                     </div>
                 </div>
             </div>
-            <!--/col-->
         </div>
-        <!--/col-->
-
     </div>
-    <!--/row-->
+
+    <form action="<?php echo base_url('gallery/upload_photo'); ?>" method="post" enctype="multipart/form-data">   
+        <input type="file" name="test" /><br>
+        <select name="event" id=""><br>
+            <option value="1">event1</option>
+            <option value="2">event2</option>
+            <option value="3">event3</option>
+        </select><br>
+        <br><input type="submit" value="Submit me" />  
+    </form>
 </div>
-<!-- end: Content -->
