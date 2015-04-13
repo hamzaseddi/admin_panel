@@ -28,7 +28,7 @@
 		* for sending it to user or somethig else/
 		* return string
 		*/
-		public function randomPassword() {
+		public function random_password() {
 		    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789"; //string for generating pass
 		    $pass = array();  // array for our future password 
 		    $alphaLength = strlen($alphabet) - 1;  
