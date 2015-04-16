@@ -28,15 +28,15 @@
 		* for sending it to user or somethig else/
 		* return string
 		*/
-		public function random_password() {
-		    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789"; //string for generating pass
-		    $pass = array();  // array for our future password 
-		    $alphaLength = strlen($alphabet) - 1;  
-		    for ($i = 0; $i < 8; $i++) { 
-		        $n = rand(0, $alphaLength);
-		        $pass[] = $alphabet[$n];  //getting password  together from randrom pices
-		    }
-		    return implode($pass);  // attay to string  and return  it 
+		public function randomPassword() {
+			$alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789"; //string for generating pass
+			$pass = array();  // array for our future password 
+			$alphaLength = strlen($alphabet) - 1;  
+			for ($i = 0; $i < 8; $i++) { 
+				$n = rand(0, $alphaLength);
+				$pass[] = $alphabet[$n];  //getting password  together from randrom pices
+			}
+			return implode($pass);  // attay to string  and return  it 
 		}
 
 		public function find_user_by_id($id) {
@@ -49,24 +49,35 @@
 		public function delete_user($id) {
 			$user = User::find($id);
 			$user -> delete();
-	    }
+		}
 
-	    public function edit_user($id, $first_name, $last_name, $birthday, $phone, $email) {
-	    	$user = User::find($id);
-	    	$user -> first_name = $first_name;
-	    	$user -> last_name  = $last_name;
-	    	$user -> birthday 	= $birthday;
-	    	$user -> phone 		= $phone;
-	    	$user -> email 		= $email;
-	    	$user -> save();
-	    }
+		public function edit_user($id, $first_name, $last_name, $birthday, $phone, $email) {
+			$user = User::find($id);
+			$user -> first_name = $first_name;
+			$user -> last_name  = $last_name;
+			$user -> birthday 	= $birthday;
+			$user -> phone 		= $phone;
+			$user -> email 		= $email;
+			$user -> save();
+		}
 
-	    public function check_auth_data($login, $password) {
-	    	$user = User::find_by_email($login);
-	    	if($user -> password == md5($password)) {
-	    		return true;	
-	    	}else{
-	    		return false;
-	    	}
-	    }
+		public function check_auth_data($login, $password) {
+			$user = User::find_by_email($login);
+			if($user -> password == md5($password)) {
+				return true;	
+			}else{
+				return false;
+			}
+		}
+
+		public function user_data($login) {
+			$user = User::find_by_email($login);
+			$data = array(
+				'first_name' =>$user->first_name,
+				'last_name' => $user->last_name,
+				'id' => $user->id,
+				'email' => $user-> email
+				);
+			return $data;
+		}
 	}

@@ -8,13 +8,13 @@
 			$this->view->load('common/footer_view');
 		}
 		/**
-		*Todo need to finish gallery 
-		* delete function 
-		* add / create/ delete/ edit  album(category)
-		* validtion images in gallery 
-		* something with names of files
-		* also need to change view of gallery + uloading form 
-		* same functions will be with documents uploads 
+		*	Todo need to finish gallery 
+		*	delete function 
+		*	add / create/ delete/ edit  album(category)
+		*	validtion images in gallery 
+		*	something with names of files
+		*	also need to change view of gallery + uloading form 
+		*	same functions will be with documents uploads 
 		*/
 		function action_upload_photo() {
 			if (!empty($_FILES['test'])) {
@@ -31,11 +31,20 @@
 		}
 
 		function action_delete_photo() {
-
+			if(is_numeric($_GET['id'])) {
+				$id = $_GET['id'];
+				Gallery::delete_photo($id);
+			}
+			redirect('gallery');
 		}
 
 		function action_create_album() {
-
+			if(isset($_POST)) {
+				Gallery::create_album(  
+					$_POST['album_name'] 
+				); 
+				redirect('gallery');
+			}
 		}
 
 		function action_edit_album() {
@@ -43,6 +52,10 @@
 		}
 
 		function action_delete_album() {
-
+			if(is_numeric($_GET['id'])) {
+				$id = $_GET['id'];
+				Gallery::delete_album($id);
+			}
+			redirect('gallery');
 		}
 	}

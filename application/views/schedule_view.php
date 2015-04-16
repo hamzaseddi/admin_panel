@@ -1,22 +1,46 @@
-    <div class="main ">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h2><i class="fa fa-calendar"></i><span class="break"></span>Calendar</h2>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
+	<div class="main ">
+		<div class="row">
+			<div class="col-lg-12">
+			  	<div class="panel panel-default">
+				  <div class="panel-heading">
+					  <h2><i class="fa fa-calendar"></i><span class="break"></span>Calendar</h2>
+				  </div>
+				  <div class="panel-body">
+						<div class="row">
+							<div class="col-lg-3 hidden-phone hidden-tablet">
+								<div id="external-events">
+									<h4>Draggable Events</h4>
+									<div class="external-event badge">
+										Default
+									</div>
+									<br>
+									<br>
+									<div class="external-event badge">Completed</div>
+									<br>
+									<br>
+									<div class="external-event badge">Warning</div>
+									<br>
+									<br>
+									<div class="external-event badge">Important</div>
+									<br>
+									<br>
+									<div class="external-event badge">Info</div>
+									<br>
+									<br>
+									<div class="external-event badge">Other</div>
+								</div>
+							</div>
+							<div class="col-lg-9">
+								<div id="calendar" class="col-lg-12"></div>	
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
 
-                            <div class="col-lg-12">
-                                <div id="calendar" class="col-lg-12"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- start: JavaScript-->
     <!--[if !IE]>-->
     <script src="assets/js/jquery-2.1.1.min.js"></script>

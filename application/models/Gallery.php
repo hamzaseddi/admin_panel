@@ -11,7 +11,7 @@
 				$type = 'jpeg';
 			}
 			if($type == 'image/pjpeg') {
-				$type = 'image/pjpeg';
+				$type = 'pjpeg';
 			}
 			if($type == 'image/png') {
 				$type = 'png';
@@ -20,7 +20,7 @@
 				'file_name' 	=> $results['filename'],
 				'file_ext'  	=> $type,
 				'upload_time'   => time(),
-				'album' 		=>	'test'
+				'album' 		=> 'test'
 			));
 
 		}
