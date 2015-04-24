@@ -1,16 +1,12 @@
 <?php
+	class Controller {
+		public $view;
 
-    class Controller {
+		function __construct() {
+			$this->view = new View();
+		}
 
-        public $model;
-        public $view;
-
-        function __construct() {
-            $this->view = new View();
-        }
-
-        // действие (action), вызываемое по умолчанию
-        function action_index() {
-            // todo
-        }
+		// действие (action), вызываемое по умолчанию
+		function action_index() {
+		}
 }

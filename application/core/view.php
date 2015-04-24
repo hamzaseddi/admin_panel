@@ -1,7 +1,7 @@
 <?php
 	class View {
 		/*
-		$content_file - виды отображающие контент страниц;
+		$content_file - view of controller
 		$data - массив, содержащий элементы контента страницы. Обычно заполняется в модели.
 		*/
 		function load($content_view, $data = null) {

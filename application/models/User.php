@@ -11,7 +11,8 @@
 				'email'      => $email,
 				'password'   => md5($password) 
 			));
-		}
+		} 
+		
 
 		/*
 		* generate randoom pass for user and send it to email 
@@ -64,20 +65,16 @@
 		public function check_auth_data($login, $password) {
 			$user = User::find_by_email($login);
 			if($user -> password == md5($password)) {
+				$user = User::find_by_email($login);
+				
+				$_SESSION['user_first_name'] = $user-> first_name;
+				$_SESSION['user_last_name'] =  $user-> last_name; 
+				$_SESSION['user_email'] =  $user-> email;
+				$_SESSION['user_id'] =  $user-> id;
+				$_SESSION['login'] = "true"; 
 				return true;	
 			}else{
 				return false;
 			}
-		}
-
-		public function user_data($login) {
-			$user = User::find_by_email($login);
-			$data = array(
-				'first_name' =>$user->first_name,
-				'last_name' => $user->last_name,
-				'id' => $user->id,
-				'email' => $user-> email
-				);
-			return $data;
 		}
 	}

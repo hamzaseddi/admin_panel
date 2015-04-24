@@ -2,29 +2,15 @@
 	class Gallery extends ActiveRecord\Model {
 		public static $table_name = 'gallery_files';
 
-		public function insert_file_to_db($results) {
-			$type = $results['post_data']['type'];
-			if($type == 'image/gif') {
-				$type = 'gif';
-			}
-			if($type == 'image/jpeg') {
-				$type = 'jpeg';
-			}
-			if($type == 'image/pjpeg') {
-				$type = 'pjpeg';
-			}
-			if($type == 'image/png') {
-				$type = 'png';
-			}
+		function insert_file_to_db($file_name) {
 			Gallery::create(array(
-				'file_name' 	=> $results['filename'],
-				'file_ext'  	=> $type,
+				'file_name' 	=> $file_name,
 				'upload_time'   => time(),
-				'album' 		=> 'test'
+				'album_id'		=> 1
 			));
-
 		}
 
-
+		function show_all_images() {
+			return Gallery::find('all');
+		}
 	}
-

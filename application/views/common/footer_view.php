@@ -59,6 +59,12 @@
         <script src="<?php echo base_url('assets/js/core.min.js');?>"></script>
 
         <!-- inline scripts related to this page -->
+        <script src="<?php echo base_url('assets/js/jquery-2.1.1.min.js');?>"></script>
+        <script src="<?php echo base_url('assets/plugins/moment/moment.min.js');?>"></script>
+        <script src="<?php echo base_url('assets/plugins/fullcalendar/js/fullcalendar.min.js');?>"></script>
+        <script src="<?php echo base_url('assets/js/pages/calendar.js');?>"></script>
+        <script src="<?php echo base_url('assets/plugins/modal/js/jquery.modalEffects.js');?>"></script>
+        <script src="<?php echo base_url('assets/js/pages/ui-modals.js');?>"></script>
         <script src="<?php echo base_url('assets/js/pages/index.js');?>"></script>
         <script src="<?php echo base_url('assets/plugins/jquery-cookie/jquery.cookie.min.js');?>"></script>
         <script src="<?php echo base_url('assets/js/demo.min.js');?>"></script>

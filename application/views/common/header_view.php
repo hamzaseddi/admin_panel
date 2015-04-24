@@ -19,7 +19,7 @@
 
         <!-- Remove following comment to add Right to Left Support or add class rtl to body -->
         <!-- <link href="assets/css/bootstrap-rtl.min.css" rel="stylesheet"> -->
-
+        <link href="<?php echo base_url('assets/plugins/modal/css/component.css');?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/jquery.mmenu.css');?>" rel="stylesheet">
         <link href="<?php echo base_url('assets/css/font-awesome.min.css');?>" rel="stylesheet">
 

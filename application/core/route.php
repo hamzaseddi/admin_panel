@@ -1,33 +1,34 @@
 <?php
 
 	/*
-	Класс-маршрутизатор для определения запрашиваемой страницы.
-	> цепляет классы контроллеров;
-	> создает экземпляры контролеров страниц и вызывает действия этих контроллеров.
+	*Class router to determine the requested page.
+	*get controller classes
+	*instantiates controllers pages and causes of action of these controllers.
 	*/
 	class Route {
 		static function start() {
-			// контроллер и действие по умолчанию
+			//deffoult action for controller
 			$controller_name = 'Index';
 			$action_name = 'index';
 
 			$routes = explode('/', $_SERVER['REQUEST_URI']);
 
-			// получаем имя контроллера
+			// get controller name
 			if ( isset($routes[1]) && !empty($routes[1])) {
 				$controller_name = $routes[1];
 			}
 
-			// получаем имя экшена
+			// get action aname
 			if ( isset($routes[2]) ) {
 				$action_name = $routes[2];
 			}
 
-			// добавляем префиксы
+			// add prefix
 			$controller_name = 'Controller_'.$controller_name;
 			$action_name = 'action_'.$action_name;
 
-			// подцепляем файл с классом контроллера
+	
+			// get failes for controller
 			$controller_file = strtolower($controller_name).'.php';
 			$controller_path = "application/controllers/".$controller_file;
 			if(file_exists($controller_path)) {
@@ -37,12 +38,12 @@
 				Route::ErrorPage404();
 			}
 
-			// создаем контроллер
+			// create new controller object
 			$controller = new $controller_name;
 			$action = $action_name;
 
 			if(method_exists($controller, $action)) {
-				// вызываем действие контроллера
+				// call action of controller
 				$controller->$action();
 			} else {
 				//redirect to 404 page

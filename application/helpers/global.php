@@ -28,5 +28,5 @@
 	*/
 	function redirect($path) {
 		header("Location: ".base_url($path));
-        exit; // if we dont use  exit php will run all the code under header.
+        exit;
 	}
