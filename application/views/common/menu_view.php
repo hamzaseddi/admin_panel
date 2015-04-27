@@ -151,11 +151,13 @@
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo base_url('gallery');?>">
-							<i class="fa fa-dashboard"></i>
-							<span class="text">Галлерея</span>
-						</a>
+						<a href="#"><i class="fa fa-edit"></i><span class="text">Галлерея</span> <span class="indicator"></span></a>
+						<ul>
+							<li><a href="<?php echo base_url('gallery');?>"><i class="fa fa-edit"></i><span class="text">Галлерея</span></a></li>
+							<li><a href="<?php echo base_url('gallery/albums');?>"><i class="fa fa-edit"></i><span class="text">Альбомы</span></a></li>
+						</ul>
 					</li>
+
 				</ul>
 			</div>
 		</div>

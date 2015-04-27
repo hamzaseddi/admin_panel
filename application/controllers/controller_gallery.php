@@ -4,16 +4,22 @@
 		function action_index() {
 			$this->view->load('common/header_view');
 			$this->view->load('common/menu_view');
-			$data['all_images'] = Gallery::show_all_images();
+			$data['albums'] = Albums::find_all_albums();
 			$this->view->load('gallery_view',$data);
 			$this->view->load('common/footer_view');
 		}
-		/**
-		*	Todo need to finish gallery 
-		*	delete function 
-		*	add / create/ delete/ edit  album(category)
-		*	same functions will be with documents uploads 
-		*/
+
+		function action_show_album() {
+			if(is_numeric($_GET['id'])) {
+				$id = $_GET['id'];
+				$data['photos'] = Gallery::show_all_from_album($id);
+			}
+			$this->view->load('common/header_view');
+			$this->view->load('common/menu_view');
+			$this->view->load('album_view', $data);
+			$this->view->load('common/footer_view');
+		}
+
 		function action_upload_photo() {
 			if(isset($_FILES['image'])){
 				$errors= array();
@@ -52,23 +58,49 @@
 			redirect('gallery');
 		}
 
+		function action_albums() {
+			$this->view->load('common/header_view');
+			$this->view->load('common/menu_view');
+			$data['albums'] = Albums::find_all_albums();
+			$this->view->load('albums_view', $data);
+			$this->view->load('common/footer_view');
+		}
+
 		function action_create_album() {
 			if(isset($_POST)) {
-				Album::create_album(  
+				Albums::create_album(  
 					$_POST['album_name'] 
 				); 
-				redirect('gallery');
+				redirect('gallery/albums');
 			}
 		}
 
 		function action_edit_album() {
+			if(is_numeric($_GET['id'])) {
+				$id = $_GET['id'];
+				$data['album'] = Albums::find_album($id);
+			}
+			$this->view->load('common/header_view');
+			$this->view->load('common/menu_view');
+			$this->view->load('albums_edit_view', $data);
+			$this->view->load('common/footer_view');
+		}
+
+		function action_edit_alb() {
+			if(is_numeric($_POST['id'])) {
+				Albums::edit_album(
+					$_POST['id'],
+					$_POST['album_name']
+				);
+			}
+			redirect('gallery/albums');
 		}
 
 		function action_delete_album() {
 			if(is_numeric($_GET['id'])) {
 				$id = $_GET['id'];
-				Album::delete_album($id);
+				Albums::delete_album($id);
 			}
-			redirect('gallery');
+			redirect('gallery/albums');
 		}
 	}

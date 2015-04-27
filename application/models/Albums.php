@@ -8,6 +8,12 @@
 			));
 		}
 
+		function edit_album($id,$name){
+			$album = Albums::find($id);
+			$album -> name = $name;
+			$album -> save();
+		}
+
 		function find_album($id) {
 			return Albums::find($id);
 		}
@@ -19,5 +25,7 @@
 		function delete_album($id) {
 			$album = Albums::find($id);
 			$album -> delete();
+
+			Gallery::delete_all_from_album($id);
 		}
 	}
