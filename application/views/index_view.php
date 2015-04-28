@@ -3,7 +3,7 @@
 		<div class="col-lg-3 col-md-6 col-sm-6">
 			<div class="info-box danger">
 				<i class="fa fa-dollar"></i>
-				<div class="count">$40</div>
+				<div class="count">€<?php echo Accounting::get_profit_for_today();?></div>
 				<div class="title">Доход</div>
 				<div class="desc">Дневной доход</div>
 			</div>
@@ -12,7 +12,7 @@
 		<div class="col-lg-3 col-md-6 col-sm-6">
 			<div class="info-box warning">
 				<i class="fa fa-dollar"></i>
-				<div class="count">$40</div>
+				<div class="count">€<?php echo Accounting::get_profit_for_this_monts();?></div>
 				<div class="title">Доход</div>
 				<div class="desc">Месячный доход</div>
 			</div>

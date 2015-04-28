@@ -31,7 +31,6 @@
 
 		function show_today_stat ($width, $height) {
 			$array = Accounting::get_statistic_for_today();
-
 			$data_array = array();
 			$labels_array = array();
 			$date_now = date('Y-m-d');
