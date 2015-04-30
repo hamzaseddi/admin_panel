@@ -17,10 +17,38 @@
 			$this->view->load('budget_view',$data);
 			$this->view->load('common/footer_view');
 		}
-		/**
-		 * edit 
-		 * delete
-		 */
+
+		function action_edit_budget_index() {
+			if(is_numeric($_GET['id'])) {
+				$id = $_GET['id'];
+				$data['budget'] = Budget::budget_find_by_id($id);
+			}else{
+				//redirect('accounting/budget');
+			}
+			$this->view->load('common/header_view');
+			$this->view->load('common/menu_view');
+			$this->view->load('edit_budget_view', $data);
+			$this->view->load('common/footer_view');
+		}
+
+		function action_edit_budget() {
+			if(is_numeric($_POST['id'])) {
+				$id = $_POST['id'];
+				Budget::edit_budget($id, $_POST['target'], $_POST['price'], $_POST['date'], $_POST['user_id']);
+			}
+			redirect('accounting/budget');
+		}
+
+		function action_delete_budget() {
+			if(is_numeric($_GET['id'])) {
+				$id = $_GET['id'];
+				Budget::delete_budget($id);
+			}else{
+				redirect('accounting/budget');
+			}
+			redirect('accounting/budget');
+		} 
+
 		function action_add_budget() {
 			if(is_numeric($_POST['cat_id'])) {
 				$id = $_POST['cat_id'];
@@ -47,28 +75,6 @@
 											'point' 		=> '#e5801d', 
 											'pointStroke' 	=> '#e5801d'
 											));
-			// ChartJS::addDefaultColor(array(	
-			// 							'fill' 			=> 'rgba(28,116,190,.8)',
-			// 							'stroke' 		=> '#1c74be',
-			// 							'point' 		=> '#1c74be', 
-			// 							'pointStroke' 	=> '#1c74be'
-			// 							));
-			// ChartJS::addDefaultColor(array(	
-			//  								'fill' 			=> 'rgba(212,41,31,.7)',
-			//  								'stroke' 		=> '#d4291f',
-			//  								'point' 		=> '#d4291f', 
-			//  								'pointStroke' 	=> '#d4291f'
-			//  							 ));
-			// ChartJS::addDefaultColor(array(
-		 	// 								'fill' 			=> '#dc693c', 
-		 	// 								'stroke' 		=> '#ff0000', 
-		 	// 								'point' 		=> '#ff0000', 
-		 	// 								'pointStroke' 	=> '#ff0000'));
-				// ChartJS::addDefaultColor(array( 
-		 	// 								'fill' 			=> 'rgba(46,204,113,.8)', 
-		 	// 								'stroke' 		=> '#2ecc71', 
-		 	// 								'point' 		=> '#2ecc71', 
-		 	// 								'pointStroke' 	=> '#2ecc71'));
 
 			$chart = new ChartJS_Line('lines', $width, $height); // name height width 
 			$chart ->addLine($data_array);
@@ -82,8 +88,9 @@
 			$data_array = array();
 			$labels_array = array();
 			$month_now = date('m');
+			$year_now = date('Y');
 			foreach ($array as $value) {
-				if($value->month == $month_now) {
+				if($value->month == $month_now && $value->year == $year_now) {
 					array_push($data_array, $value->total_price);
 					array_push($labels_array, $value->date1);
 				}
@@ -124,11 +131,11 @@
 			return $chart;
 		}
 
-		function stats_test() {
-			$array = Accounting::years_months_data_price(); // array with full information
-			$years = Accounting::years(); // array only with years what we have
+		function stats_year_month() {
+			$array  = Accounting::years_months_data_price(); // array with full information
+			$years  = Accounting::years(); // array only with years what we have
 			$months = Accounting::months(); // array onlu with months  what we have
-
+			
 			foreach ($years as $year) { // checking year array 
 				foreach ($months as $month) { //cheking all months what we have 
 					$data_array = array();
@@ -157,10 +164,15 @@
 					$chart = new ChartJS_Line('lines', 700, 400); // name height width 
 					$chart ->addLine($data_array); //data array
 					$chart ->addLabels($labels_array); // labels array
+					
+					$data = $chart->get();
 
-					echo 'Год '.$year->year.' месяц '.$month->month.'<br>';
-					echo $chart;//draw chart 
-				}	
+					if($data[1]['data'] != null) {
+						echo 'Год '.$year->year.' месяц '.$month->month.'<br>';
+						echo $chart;//draw chart 
+					}
+				}
 			}
+			
 		}
 	}

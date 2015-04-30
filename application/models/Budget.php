@@ -12,6 +12,24 @@
 			));
 		}
 
+		function budget_find_by_id($id) {
+			return $budget = Budget::find($id);
+		}
+
+		function edit_budget($id, $target, $price, $date, $user_id) {
+			$budget = Budget::find($id);
+			$budget -> target 	= $target;
+			$budget -> price    = $price;
+			$budget -> date 	= $date;
+			$budget -> user_id 	= $user_id;
+			$budget -> save();
+		}
+
+		function delete_budget($id) {
+			$entry = Budget::find($id);
+			$entry-> delete();
+		}
+
 		function show_budget() {
 			return Budget::find_by_sql('SELECT users.first_name, users.last_name, budget.id ,budget.target,
 											   budget.price , budget.date, budget_cat.name 

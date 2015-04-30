@@ -23,7 +23,7 @@
 				<i class="fa fa-smile-o"></i>
 				<div class="count"><?php echo Clients::count();?></div>
 				<div class="title">Клиенты</div>
-				<div class="desc">Колличество клиентов за день</div>
+				<div class="desc">Колличество клиентов в системе</div>
 			</div>
 		</div>
 

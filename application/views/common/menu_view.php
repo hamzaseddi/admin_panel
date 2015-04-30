@@ -145,10 +145,11 @@
 						</ul>
 					</li>
 					<li>
-						<a href="<?php echo base_url('storage');?>">
-							<i class="fa fa-dashboard"></i>
-							<span class="text">Архив документов</span>
-						</a>
+						<a href="#"><i class="fa fa-edit"></i><span class="text">Документы</span> <span class="indicator"></span></a>
+						<ul>
+							<li><a href="<?php echo base_url('storage');?>"><i class="fa fa-edit"></i><span class="text">Архив документов</span></a></li>
+							<li><a href="<?php echo base_url('storage/categories');?>"><i class="fa fa-edit"></i><span class="text">Категории</span></a></li>
+						</ul>
 					</li>
 					<li>
 						<a href="#"><i class="fa fa-edit"></i><span class="text">Галлерея</span> <span class="indicator"></span></a>

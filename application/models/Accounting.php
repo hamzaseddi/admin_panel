@@ -13,12 +13,6 @@
 			));
 		}
 
-		function get_statistic_for_today() {											
-				return $entrys = Accounting::find_by_sql("SELECT HOUR(date) as hour, price as total_price, DATE(date) as date1 
-														FROM accounting_stat  
-														ORDER BY date1,hour");
-		}
-
 		function get_profit_for_today() {
 				$entrys = Accounting::find_by_sql("SELECT SUM(price) as total_price, DATE(date) as date1 
 														FROM accounting_stat  
@@ -52,8 +46,15 @@
 				return $today_profit;
 		}
 
+		function get_statistic_for_today() {
+				return $entrys = Accounting::find_by_sql("SELECT HOUR(date) as hour, price as total_price, DATE(date) as date1 
+														FROM accounting_stat
+														GROUP BY date1,hour
+														ORDER BY date1,hour");
+		}
+
 		function get_statistic_for_months() {
-			return $entrys = Accounting::find_by_sql("SELECT MONTH(date) as month, SUM(price) as total_price, DATE(date) as date1 
+			return $entrys = Accounting::find_by_sql("SELECT y as year, MONTH(date) as month, SUM(price) as total_price, DATE(date) as date1 
 														FROM accounting_stat  
 														GROUP BY date1 , month  
 														ORDER BY date1");
@@ -78,6 +79,7 @@
 														GROUP BY year 
 														ORDER BY year");
 		}
+
 		function months() {
 			return $entrys = Accounting::find_by_sql("SELECT MONTH(date) as month 
 														FROM accounting_stat 

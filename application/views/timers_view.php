@@ -1,3 +1,8 @@
+<style>
+	body{
+		line-height :normal !important;
+	}
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
 <div class="main">
 	<div class="row">
@@ -13,7 +18,7 @@
 					foreach ($data['time'] as $time ) {
 						if($time->user_id == $spot->user_on_spot && $time->spot_id == $spot -> id) {
 							echo '<form  method="POST" action="'.base_url('spot/untake_spot').'">
-							<div class="clock" data-countdown="'.$time->time_end.'"></div>
+							<div class="clock" data-countdown="'.$time->time_end.'"></div><br>
 							<input type="hidden" name="time_id" value="'.$time->id.'">';
 						}
 					}
@@ -26,29 +31,30 @@
 					echo'<center>
 							<button class="btn btn-success" data-toggle="modal" data-target="#myModal-'.$spot->number.'">Занять</button>
 						</center>';
-				}
-				if($spot->status == 'danger') {
+				}else{
+					echo'<input type="hidden" name="spot_id" value="'.$spot->id.'">
+							<div class="col-lg-6">
+								<button type="submit" class="btn btn-success" name="end">Закончить</button>
+							</div>
+						</form>';
+						// <div class="col-md-3">
+						// 	<center>
+						// 		<button type="button" class="btn btn-success pause">Остановить</button>
+						// 	</center>
+						// </div>
+						// <div class="col-md-3">
+						// 	<center>
+						// 		<button type="button" class="btn btn-success resume">Запустить</button>
+						// 	</center>
+						// </div>
+						// 
 					echo'
-						<input type="hidden" name="spot_id" value="'.$spot->id.'">
-						<div class="col-md-3">
-							<button type="submit" class="btn btn-success" name="end">Закончить</button>
-						</div>
-						<div class="col-md-3">
-							<center>
-								<button type="button" class="btn btn-success pause">Остановить</button>
-							</center>
-						</div>
-						<div class="col-md-3">
-							<center>
-								<button type="button" class="btn btn-success resume">Запустить</button>
-							</center>
-						</div>
-						<div class="col-md-3">
-							<center>	
-								<button type="button" class="btn btn-success">Сохранить</button>
-							</center>
-						</div>
-					</form>';
+						<form  method="POST" action="'.base_url('saved_time/save').'">
+							<input type="hidden" name="time_id" value="'.$time->id.'">
+							<div class="col-lg-6">
+								<button type="submit" class="btn btn-success pull-right">Сохранить</button>
+							</div>
+						</form>';
 				}
 				echo'</div>
 				</div>
@@ -62,13 +68,15 @@
 							<form method="post" action="'.base_url('spot/take_spot/').'"> 
 								<div class="modal-body">
 									<input type="hidden" name="spot_id" value="'.$spot->id.'">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, cumque!</p>
-									<select name="client_id">';
+									<p>Выберите клиента и время</p>
+									<label for="client_id">Клиент</label>
+									<select name="client_id" class="form-control">';
 										foreach ($data['clients']  as $client) {
 											echo '<option value="'.$client->id.'">'.$client->first_name.' '.$client->last_name.'</option>';
 										}
 							echo '</select><br>
-									<select name="price_id">';
+									<label for="price_id">Колличество времени</label>
+									<select name="price_id" class="form-control">';
 									foreach ($data['prices']  as $price) {
 											echo '<option value="'.$price->id.'">'.$price->time_amount.'</option>';
 									}
@@ -91,14 +99,14 @@
 	$('.clock').each(function() {
 		var $this = $(this), finalDate = $(this).data('countdown');
 	 	$this.countdown(finalDate, function(event) {
-			$this.html(event.strftime('осталось %H часов %M минут %S'));
+			$this.html(event.strftime('осталось %H часов %M минут'));
 		});
-		$('.pause',$this.parent().parent()).click(function() {
-    		$this.countdown('pause');
-  		});
-
-	  	$('.resume',$this.parent().parent()).click(function() {
-	    	$this.countdown('resume');
-	  	});
+		// $('.pause',$this.parent().parent()).click(function() {
+    	// 		$this.countdown('pause');
+  		// });
+		// 
+	  	// $('.resume',$this.parent().parent()).click(function() {
+	    //		$this.countdown('resume');
+	  	// });
 	})
 </script>

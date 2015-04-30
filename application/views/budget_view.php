@@ -171,8 +171,8 @@
 											</td>
 											
 											<td>
-												<a href="#">Удалить</a> /
-												<a href="#">Изменить</a> 
+												<a href="'.base_url('accounting/edit_budget_index/').'?id='.$history->id.'">Изменить</a> /
+												<a href="'.base_url('accounting/delete_budget/').'?id='.$history->id.'">Удалить</a>
 											</td>
 										</tr>
 									';

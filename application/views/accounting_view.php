@@ -99,55 +99,7 @@
 				</div>
 				<div class="panel-body">
 					<div class="panel panel-default">
-					<?php echo Controller_Accounting::stats_test(700, 400); ?>
-						<!-- <div class="panel-heading">
-							<h2>
-								<i class="fa fa-align-justify"></i>
-								<span class="break"></span>
-								2014
-							</h2>
-							<div class="panel-actions">
-								<a href="table.html#" class="btn-minimize">
-									<i class="fa fa-chevron-up"></i>
-								</a>
-							</div>
-						</div>
-						<div class="panel-body">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h2>
-										<i class="fa fa-align-justify"></i>
-										<span class="break"></span>
-										январь
-									</h2>
-									<div class="panel-actions">
-										<a href="table.html#" class="btn-minimize">
-											<i class="fa fa-chevron-up"></i>
-										</a>
-									</div>
-								</div>
-								<div class="panel-body">
-									
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h2>
-										<i class="fa fa-align-justify"></i>
-										<span class="break"></span>
-										Февраль
-									</h2>
-									<div class="panel-actions">
-										<a href="table.html#" class="btn-minimize">
-											<i class="fa fa-chevron-up"></i>
-										</a>
-									</div>
-								</div>
-								<div class="panel-body">
-									
-								</div>
-							</div>
-						</div> -->
+						<?php  echo Controller_Accounting::stats_year_month(); ?>
 					</div>
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -242,7 +194,6 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
 </div>
 <script src="<?php echo base_url('assets/js/charts/Chart.js');?>"></script>

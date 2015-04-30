@@ -11,8 +11,7 @@
 		}
 
 		function add_time($client_id, $time_start, $time_end, $spot_id, $price) {
-			$year = date('Y', strtotime($time_start));
-			$month = date('m', strtotime($time_start));
+
 			User_time::create(array(
 				'spot_id'		=>  $spot_id,
 				'user_id'		=>	$client_id,
@@ -20,6 +19,9 @@
 				'time_end'		=>	$time_end,
 				'time_status'	=>  1
 			));
+
+			$year = date('Y', strtotime($time_start));
+			$month = date('m', strtotime($time_start));
 			Accounting::add_entry($time_start, $price, $client_id, $spot_id, $year, $month);
 		}
 	}
